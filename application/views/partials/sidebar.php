@@ -39,5 +39,9 @@
               </ul>
             </li>
           </ul>
+          <a href="<?= site_url('welcome/logout') ?>" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+            <i class="fe fe-box fe-16"></i>
+            <span class="ml-3 item-text">Logout</span>
+          </a>
         </nav>
       </aside>

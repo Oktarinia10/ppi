@@ -132,29 +132,35 @@ class Welcome extends CI_Controller {
                 $this->session->set_userdata('pic_flag', $cek->pic_flag);
 
 				// Redirect based on user role
-				if ($cek->pic_flag == '1' || $cek->pic_flag == '2') {
+				// if ($cek->pic_flag == '1' || $cek->pic_flag == '2') {
+				// 	redirect(site_url('c_dashboard'));
+				// } else {
+				// 	echo 'Anda tidak memiliki akses!'; 
+				// }
+
+				if ($cek->pic_flag == '1') {
 					redirect(site_url('c_dashboard'));
-				} else {
+				} elseif ($cek->pic_flag == '2') {
+					redirect(site_url('c_dashboard/dash_admin'));
+				}else {
 					echo 'Anda tidak memiliki akses!'; 
 				}
 				
-
-	
 			} else {
 				// Password is incorrect
 				$this->session->set_flashdata('failed', 'Password salah !');
-				redirect(site_url('welcome'));
+				redirect(site_url(''));
 			}
 		} else {
 			// Username not found
 			$this->session->set_flashdata('failed', 'Username tidak Tersedia !');
-			redirect(site_url('welcome'));
+			redirect(site_url(''));
 		}
 	}
 
 	public function logout(){
 		$this->session->sess_destroy();
-    	redirect(site_url('welcome'));
+    	redirect(site_url(''));
 	}
 	
 }

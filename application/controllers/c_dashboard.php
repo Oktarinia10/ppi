@@ -13,5 +13,9 @@ class c_dashboard extends CI_Controller {
 	{
 		$this->load->view('dashboard');
 	}
+	public function dash_admin()
+	{
+		$this->load->view('dash_adm');
+	}
 
 }
