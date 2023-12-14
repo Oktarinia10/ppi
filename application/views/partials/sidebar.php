@@ -16,11 +16,13 @@
             </a>
           </div>
           <ul class="navbar-nav flex-fill w-100 mb-2">
-            <li class="nav-item dropdown">
-              <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
-                <i class="fe fe-home fe-16"></i>
-                <span class="ml-3 item-text">Dashboard</span><span class="sr-only">(current)</span>
-              </a>
+            <li class="nav-item w-100 ">
+                <a class="nav-link" href="<?=site_url('c_dashboard/index')?>">
+                    <i class="fe fe-home fe-16"></i>
+                    <span class="ml-3 item-text">Dashboard</span>
+                </a>
+            </li>
+          </ul>
               
           <p class="text-muted nav-heading mt-4 mb-1">
             <span>Components</span>
@@ -41,11 +43,11 @@
           </ul>
           <ul class="navbar-nav flex-fill w-100 mb-2">
             <li class="nav-item dropdown">
-              <a href="#ui-elements2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+              <a href="#ui-elements" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
                 <i class="fe fe-box fe-16"></i>
                 <span class="ml-3 item-text">Trans</span>
               </a>
-              <ul class="collapse list-unstyled pl-4 w-100" id="ui-elements2">
+              <ul class="collapse list-unstyled pl-4 w-100" id="ui-elements">
                 <li class="nav-item">
                   <a class="nav-link pl-3" href="<?= site_url('c_trans_form/create') ?>"><span class="ml-1 item-text">Trans Form</span>
                   </a>
@@ -53,9 +55,15 @@
               </ul>
             </li>
           </ul>
-          <a href="<?= site_url('welcome/logout') ?>" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
-            <i class="fe fe-box fe-16"></i>
-            <span class="ml-3 item-text">Logout</span>
-          </a>
+          <ul class="navbar-nav flex-fill w-100 mb-2">
+            <li class="nav-item w-100 ">
+                <a class="nav-link" href="<?=site_url('welcome/logout')?>">
+                    <i class="fe fe-log-out fe-16"></i>
+                    <span class="ml-3 item-text">Logout</span>
+                </a>
+            </li>
+          </ul>
+          
+         
         </nav>
       </aside>

@@ -16,25 +16,22 @@
                     <div class="col-md-6">
                     <div class="form-group row">
                         <label class="col-sm-3 col-form-label">ask hhg 1</label>
-                        <div class="col-sm-9">
-                          <input type="text" class="form-control" placeholder="num">
+                        <div class="col-sm-5">
+                          <input type="number" class="form-control" placeholder="num" required>
                         </div>
                       </div>
                     <div class="form-group row">
                         <label class="col-sm-3 col-form-label"></label>
-                        <div class="col-sm-9">
-                          <input type="text" class="form-control" placeholder="denum">
+                        <div class="col-sm-5">
+                          <input type="number" class="form-control" placeholder="denum" required>
                         </div>
                       </div>
                     <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Email</label>
-                        <div class="col-sm-9">
+                        <div class="col-sm-5">
                           <input type="text" class="form-control">
                         </div>
                       </div>
-                     
-                      
-                      
                     </div> <!-- /.col -->
                     <div class="col-md-6">
                       <div class="form-group mb-3">

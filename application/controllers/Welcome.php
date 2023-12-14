@@ -96,7 +96,7 @@ class Welcome extends CI_Controller {
     //         $hasil = $cek->row();
     //         if(password_verify($kary_pwd, $hasil->kary_pwd))
     //         {
-    //             // membuat session
+    //       
     //             $this->session->set_userdata('pic_id', $hasil->pic_id);
     //             $this->session->set_userdata('is_login', TRUE);
 
@@ -142,7 +142,7 @@ class Welcome extends CI_Controller {
 				if ($cek->pic_flag == '1') {
 					redirect(site_url('c_dashboard/index'));
 				} elseif ($cek->pic_flag == '2') {
-					redirect(site_url('c_dashboard/dash_admin'));
+					redirect(site_url('c_dashboard/index'));
 				}else {
 					echo 'Anda tidak memiliki akses!'; 
 				}

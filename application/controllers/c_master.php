@@ -6,8 +6,7 @@ class c_master extends CI_Controller {
 	public function __construct()
  	{
   		parent::__construct();
-        $this->db1 = $this->load->database('hrd');
-		$this->db2 = $this->load->database('otherdb', TRUE);
+		$this->load->model('m_master_form', 'm_master_form');
 
  	}
 
@@ -19,24 +18,40 @@ class c_master extends CI_Controller {
 	public function create()
 	{
 		$this->load->view('master/tambah');
+		$data = $this->m_master_form->getAllData();
+		var_dump($data);
+
+		$this->form_validation->set_rules(
+			'mst_name',
+			'Nama Master',
+			'required',
+			array('required' => 'Harus Diisi!')
+		);
+		$this->form_validation->set_rules(
+			'mst_form_st',
+			'Master form st',
+			'required',
+			array('required' => 'Harus Diisi!')
+		);
+
+		// cek validasi
+		if($this->form_validation->run() == TRUE){
+			$mst_name = $this->input->post('mst_name');
+			$mst_form_st = $this->input->post('mst_form_st');
+
+			$data = [
+				'mst_name' => $mst_name,
+				'mst_form_st' => $mst_form_st
+			];
+			$this->m_master_form->insert($data);
+			$this->load->view('master/index');
+
+		}else{
+			$this->load->view('master/create');
+		}
+
+
 	}
 
-	public function coba_hrd()
-	{
-  	// $otherdb = $this->load->database('hrd', TRUE); // the TRUE paramater tells CI that you'd like to return the database object.
-	$db1 = $this->load->database('hrd');
-	$coba = $db1->get('karyawan')->result_array();
-	// $hrd = $this->db->get('karyawan')->result_array();
-  	// $query = $hrd->select('kary_nik')->get('karyawan');
-  	var_dump($coba);
-	}
-
-	public function coba_ppi()
-	{
-		$this->db2->select('*');
-		$this->db2->from('pic');
-		$query = $this->db2->get()->result_array();
-		var_dump($query);
-	}
 
 }
