@@ -1,20 +1,22 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class c_dashboard extends CI_Controller {
+class c_trans_form extends CI_Controller {
 
 	public function __construct()
  	{
   		parent::__construct();
+
  	}
 
 	public function index()
 	{
-		$this->load->view('dashboard');
+		$this->load->view('trans_form/index');
 	}
-	public function dash_admin()
+
+	public function create()
 	{
-		$this->load->view('dash_adm');
+		$this->load->view('trans_form/tambah');
 	}
 
 }

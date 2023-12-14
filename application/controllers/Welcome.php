@@ -125,6 +125,7 @@ class Welcome extends CI_Controller {
 		$kary_pwd = $this->input->post('kary_pwd');
 	
 		$cek = $this->m_auth->getKaryawanPicData($pic_nik);
+
 	
 		if ($cek) {
 			if (password_verify($kary_pwd, $cek->kary_pwd)) {
@@ -139,7 +140,7 @@ class Welcome extends CI_Controller {
 				// }
 
 				if ($cek->pic_flag == '1') {
-					redirect(site_url('c_dashboard'));
+					redirect(site_url('c_dashboard/index'));
 				} elseif ($cek->pic_flag == '2') {
 					redirect(site_url('c_dashboard/dash_admin'));
 				}else {

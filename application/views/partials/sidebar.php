@@ -27,13 +27,27 @@
           </p>
           <ul class="navbar-nav flex-fill w-100 mb-2">
             <li class="nav-item dropdown">
-              <a href="#ui-elements" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+              <a href="#ui-elements1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
                 <i class="fe fe-box fe-16"></i>
                 <span class="ml-3 item-text">Master</span>
               </a>
-              <ul class="collapse list-unstyled pl-4 w-100" id="ui-elements">
+              <ul class="collapse list-unstyled pl-4 w-100" id="ui-elements1">
                 <li class="nav-item">
-                  <a class="nav-link pl-3" href="./ui-color.html"><span class="ml-1 item-text">Data A</span>
+                  <a class="nav-link pl-3" href="<?= site_url('c_master/create') ?>"><span class="ml-1 item-text">Master Form</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="navbar-nav flex-fill w-100 mb-2">
+            <li class="nav-item dropdown">
+              <a href="#ui-elements2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+                <i class="fe fe-box fe-16"></i>
+                <span class="ml-3 item-text">Trans</span>
+              </a>
+              <ul class="collapse list-unstyled pl-4 w-100" id="ui-elements2">
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="<?= site_url('c_trans_form/create') ?>"><span class="ml-1 item-text">Trans Form</span>
                   </a>
                 </li>
               </ul>
