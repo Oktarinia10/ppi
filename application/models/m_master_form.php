@@ -18,6 +18,12 @@ class m_master_form extends CI_Model {
     }
 
     public function addData($data){
-        $this->db2->insert($data);
+        $this->db2->insert('master_form', $data);
     }
+    public function hapusData($mst_form_id){
+        $this->db2->where('mst_form_id', $mst_form_id);
+        return $this->db2->delete('master_form');
+    }
+
+    
 }

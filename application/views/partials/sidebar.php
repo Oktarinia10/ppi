@@ -35,7 +35,7 @@
               </a>
               <ul class="collapse list-unstyled pl-4 w-100" id="ui-elements1">
                 <li class="nav-item">
-                  <a class="nav-link pl-3" href="<?= site_url('c_master/create') ?>"><span class="ml-1 item-text">Master Form</span>
+                  <a class="nav-link pl-3" href="<?= site_url('c_master/index') ?>"><span class="ml-1 item-text">Master Form</span>
                   </a>
                 </li>
               </ul>
