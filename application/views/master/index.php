@@ -35,7 +35,7 @@
                          <td><?= $a['mst_name']; ?></td>
                          <td><?= $a['mst_form_st']; ?></td>
                          <td><a class="dropdown-item" href="<?= site_url("c_master/hapus_data/{$a['mst_form_id']}"); ?>">Hapus</a>
-                         <a class="dropdown-item" href="<?= site_url("c_master/edit_data/{$a['mst_form_id']}"); ?>">Edit</a> </td>
+                         <a class="dropdown-item" href="<?= site_url("c_master/edit/{$a['mst_form_id']}"); ?>">Edit</a> </td>
 
                           </tr>
                         <?php endforeach?>

@@ -11,6 +11,7 @@
     <script src='../../public/js/dataTables.bootstrap4.min.js'></script>
 
     <script src="../../public/js/apps.js"></script>
+    
 
     <script>
       $('#dataTable-1').DataTable(
