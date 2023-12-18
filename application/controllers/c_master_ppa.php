@@ -2,55 +2,49 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
-class c_master extends CI_Controller {
+class c_master_ppa extends CI_Controller {
 
 	public function __construct()
  	{
   		parent::__construct();
-		$this->load->model('m_master_form', 'm_master_form');
+		$this->load->model('m_master_ppa', 'm_master_ppa');
 
  	}
 
 	public function index()
 	{
-		// $this->load->view('master/index');
-		// $data = $this->m_master_form->getAllData();
 		$data = [
-            'title' => 'Master Form',
-            'mstform' => $this->m_master_form->getAllData(),
+            'title' => 'Master PPA',
+            'mstppa' => $this->m_master_ppa->getAllData(),
         ];
-		// var_dump($data);
-
-        $this->load->view('master/index', $data);
+        $this->load->view('master_ppa/index', $data);
 
 	}
 
 	public function tambah(){
 		$data = [
-            'title' => 'Master Form',
-            'mstform' => $this->m_master_form->getAllData(),
+            'title' => 'Master PPA',
+            'mstppa' => $this->m_master_ppa->getAllData(),
         ];
-        $this->load->view('master/tambah' , $data);
+        $this->load->view('master_ppa/tambah' , $data);
 	}
 
 	public function proses_tambah()
 	{
-		// $k = [
-        //     'title' => 'Master Form',
-        //     'mstform' => $this->m_master_form->getAllData(),
-        // ];
 		$this->load->library('form_validation');
-		$mst_name = $this->input->post('mst_name');
-		$mst_form_st = $this->input->post('mst_form_st');
+		$mst_ppa_name = $this->input->post('mst_ppa_name');
+		$mst_ppa_st = $this->input->post('mst_ppa_st');
+
+        var_dump($mst_ppa_name, $mst_ppa_st);
 
 		$this->form_validation->set_rules(
-			'mst_name',
+			'mst_ppa_name',
 			'Nama Master',
 			'required',
 			array('required' => 'Harus Diisi!')
 		);
 		$this->form_validation->set_rules(
-			'mst_form_st',
+			'mst_ppa_st',
 			'Master form st',
 			'required',
 			array('required' => 'Harus Diisi!')
@@ -59,36 +53,36 @@ class c_master extends CI_Controller {
 		// cek validasi
 		if ($this->form_validation->run() == TRUE) {
 			$data = [
-				'mst_name' => $mst_name,
-				'mst_form_st' => $mst_form_st,
+				'mst_ppa_name' => $mst_ppa_name,
+				'mst_ppa_st' => $mst_ppa_st,
 			];
-			// var_dump($data);
-			$this->m_master_form->addData($data);
-			redirect(site_url('c_master/index'));
+			var_dump($data);
+			$this->m_master_ppa->addData($data);
+			redirect(site_url('c_master_ppa/index'));
 		} else {
-			redirect(site_url('c_master/tambah'));
+			redirect(site_url('c_master_ppa/tambah'));
 		}
 	}
 
 	public function edit($id){
 		$data = [
             'title' => 'Master Form',
-            'mstform' => $this->m_master_form->getDataById($id),
+            'mstppa' => $this->m_ppa_form->getDataById($id),
         ];
-        $this->load->view('partials/header' , $data);
-        $this->load->view('partials/sidebar' , $data);
-        $this->load->view('master/edit' , $data);
-        $this->load->view('partials/footer' , $data);
+        // $this->load->view('partials/header' , $data);
+        // $this->load->view('partials/sidebar' , $data);
+        $this->load->view('master_ppa/edit' , $data);
+        // $this->load->view('partials/footer' , $data);
 	}
 
 	public function proses_update($id)
 	{
 
 		$this->load->library('form_validation');
-		$data['mstform'] = $this->m_master_form->getDataById($id);
+		$data['mstppa'] = $this->m_master_form->getDataById($id);
 
 		$this->form_validation->set_rules(
-			'mst_name',
+			'mst_ppa_name',
 			'Nama Master',
 			'required',
 			array('required' => 'Harus Diisi!')

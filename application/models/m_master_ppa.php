@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class m_master_form extends CI_Model {
+class m_master_ppa extends CI_Model {
 
 	public function __construct()
  	{
@@ -12,13 +12,13 @@ class m_master_form extends CI_Model {
 
     public function getAllData(){
     
-        $this->db2->order_by('mst_form_id', 'asc');
-        return  $this->db2->get('master_form')->result_array();
+        $this->db2->order_by('mst_ppa_id', 'asc');
+        return  $this->db2->get('master_ppa')->result_array();
        
     }
+    //tambah data
     public function addData($data){
-        
-        $this->db2->insert('master_form', $data);
+        $this->db2->insert('master_ppa', $data);
     }
 
     public function hapusData($mst_form_id){
@@ -27,23 +27,23 @@ class m_master_form extends CI_Model {
     }
 
     public function getDataById($id){
-        return $this->db2->get_where('master_form', ['mst_form_id' => $id])->row_array();
+        return $this->db2->get_where('master_ppa', ['mst_ppa_id' => $id])->row_array();
     }
 
     public function editData($id)
     {
     // Dapatkan data berdasarkan ID
-    $data['mstform'] = $this->db2->get_where('master_form', ['mst_form_id' => $id])->row_array();
+    $data['mstppa'] = $this->db2->get_where('master_ppa', ['mst_ppa_id' => $id])->row_array();
 
     // Ambil nilai input dari formulir
     $updated_data = [
-        "mst_name" => $this->input->post('mst_name', true),
-        "mst_form_st" => $this->input->post('mst_form_st', true),
+        "mst_ppa_name" => $this->input->post('mst_name', true),
+        "mst_ppa_st" => $this->input->post('mst_form_st', 0), // set 0
     ];
 
     // Update data di database berdasarkan ID
-    $this->db2->where('mst_form_id', $id);
-    $this->db2->update('master_form', $updated_data);
+    $this->db2->where('mst_ppa_id', $id);
+    $this->db2->update('master_ppa', $updated_data);
     }
 
 

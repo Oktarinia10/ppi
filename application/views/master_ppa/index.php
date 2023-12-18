@@ -6,7 +6,7 @@
         <div class="container-fluid">
           <div class="row justify-content-center">
             <div class="col-12">
-              <h2 class="mb-2 page-title">Master Form</h2>
+              <h2 class="mb-2 page-title">Master PPA</h2>
               <p class="card-text">DataTables is a plug-in for the jQuery Javascript library. It is a highly flexible tool, built upon the foundations of progressive enhancement, that adds all of these advanced features to any HTML table. </p>
               <?= form_error('image', '<div class="error">', '</div>'); ?>
                         <?= $this->session->flashdata('message'); ?>
@@ -21,21 +21,21 @@
                         <thead>
                           <tr>
                             <th>No</th>
-                            <th>Mst Name</th>
-                            <th>Mst form st</th>
+                            <th>PPA Name</th>
+                            <th>Mst PPA st</th>
                             <th>Action</th>
                           </tr>
                         </thead>
                         <tbody>
                         <?php
                          $no = 1;
-                         foreach ($mstform as $a) : ?>
+                         foreach ($mstppa as $a) : ?>
                           <tr>
                           <td><?= $no++; ?></td>
-                         <td><?= $a['mst_name']; ?></td>
-                         <td><?= $a['mst_form_st']; ?></td>
-                         <td><a class="dropdown-item" href="<?= site_url("c_master/hapus_data/{$a['mst_form_id']}"); ?>">Hapus</a>
-                         <a class="dropdown-item" href="<?= site_url("c_master/edit/{$a['mst_form_id']}"); ?>">Edit</a> </td>
+                         <td><?= $a['mst_ppa_name']; ?></td>
+                         <td><?= $a['mst_ppa_st']; ?></td>
+                         <td><a class="dropdown-item" href="<?= site_url("c_master/hapus_data/{$a['mst_ppa_id']}"); ?>">Hapus</a>
+                         <a class="dropdown-item" href="<?= site_url("c_master/edit/{$a['mst_ppa_id']}"); ?>">Edit</a> </td>
 
                           </tr>
                         <?php endforeach?>
