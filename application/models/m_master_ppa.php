@@ -13,6 +13,7 @@ class m_master_ppa extends CI_Model {
     public function getAllData(){
     
         $this->db2->order_by('mst_ppa_id', 'asc');
+        $this->db2->where('mst_ppa_st', 1);
         return  $this->db2->get('master_ppa')->result_array();
        
     }
@@ -21,9 +22,9 @@ class m_master_ppa extends CI_Model {
         $this->db2->insert('master_ppa', $data);
     }
 
-    public function hapusData($mst_form_id){
-        $this->db2->where('mst_form_id', $mst_form_id);
-        return $this->db2->delete('master_form');
+    public function hapusData($mst_ppa_id){
+        $this->db2->where('mst_ppa_id', $mst_ppa_id);
+        return $this->db2->delete('master_ppa');
     }
 
     public function getDataById($id){
@@ -32,16 +33,17 @@ class m_master_ppa extends CI_Model {
 
     public function editData($id)
     {
-    // Dapatkan data berdasarkan ID
+    // get data by id
     $data['mstppa'] = $this->db2->get_where('master_ppa', ['mst_ppa_id' => $id])->row_array();
 
-    // Ambil nilai input dari formulir
+    // nilai dr form
     $updated_data = [
-        "mst_ppa_name" => $this->input->post('mst_name', true),
-        "mst_ppa_st" => $this->input->post('mst_form_st', 0), // set 0
+        "mst_ppa_name" => $this->input->post('mst_ppa_name', true),
+        "mst_ppa_st" => (0), // set 0
     ];
+    // var_dump($updated_data);
 
-    // Update data di database berdasarkan ID
+    // Update data by id
     $this->db2->where('mst_ppa_id', $id);
     $this->db2->update('master_ppa', $updated_data);
     }

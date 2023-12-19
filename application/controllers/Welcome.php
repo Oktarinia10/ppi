@@ -17,7 +17,10 @@ class Welcome extends CI_Controller {
 
 	public function dashboard()
 	{
-		$this->load->view('dashboard');
+		$data = [
+			'title' => 'PPI',
+		];
+		$this->load->view('dashboard', $data);
 	}
 
 	public function autentikasi()

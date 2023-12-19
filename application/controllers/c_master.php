@@ -8,22 +8,26 @@ class c_master extends CI_Controller {
  	{
   		parent::__construct();
 		$this->load->model('m_master_form', 'm_master_form');
+		$this->load->library('encryption');
 
  	}
 
 	public function index()
 	{
-		// $this->load->view('master/index');
-		// $data = $this->m_master_form->getAllData();
 		$data = [
             'title' => 'Master Form',
             'mstform' => $this->m_master_form->getAllData(),
+			
         ];
-		// var_dump($data);
+		// foreach ($data['mstform'] as &$item) {
+		// 	// $item['encrypted_id'] = $this->encrypt->encode($item['mst_form_id']);
+		// 	$item['encrypted_id'] = $this->encryption->encrypt($item['mst_form_id']);
 
+		// var_dump($data['mstform']);
         $this->load->view('master/index', $data);
 
 	}
+
 
 	public function tambah(){
 		$data = [
@@ -132,8 +136,6 @@ class c_master extends CI_Controller {
         ');
 		redirect(site_url('c_master/index'));
 	}
-	
-
 
 
 

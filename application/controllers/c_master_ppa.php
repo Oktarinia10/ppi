@@ -17,6 +17,7 @@ class c_master_ppa extends CI_Controller {
             'title' => 'Master PPA',
             'mstppa' => $this->m_master_ppa->getAllData(),
         ];
+		// var_dump($data);
         $this->load->view('master_ppa/index', $data);
 
 	}
@@ -35,7 +36,7 @@ class c_master_ppa extends CI_Controller {
 		$mst_ppa_name = $this->input->post('mst_ppa_name');
 		$mst_ppa_st = $this->input->post('mst_ppa_st');
 
-        var_dump($mst_ppa_name, $mst_ppa_st);
+        // var_dump($mst_ppa_name, $mst_ppa_st);
 
 		$this->form_validation->set_rules(
 			'mst_ppa_name',
@@ -56,7 +57,7 @@ class c_master_ppa extends CI_Controller {
 				'mst_ppa_name' => $mst_ppa_name,
 				'mst_ppa_st' => $mst_ppa_st,
 			];
-			var_dump($data);
+			// var_dump($data);
 			$this->m_master_ppa->addData($data);
 			redirect(site_url('c_master_ppa/index'));
 		} else {
@@ -67,7 +68,7 @@ class c_master_ppa extends CI_Controller {
 	public function edit($id){
 		$data = [
             'title' => 'Master Form',
-            'mstppa' => $this->m_ppa_form->getDataById($id),
+            'mstppa' => $this->m_master_ppa->getDataById($id),
         ];
         // $this->load->view('partials/header' , $data);
         // $this->load->view('partials/sidebar' , $data);
@@ -77,9 +78,10 @@ class c_master_ppa extends CI_Controller {
 
 	public function proses_update($id)
 	{
-
 		$this->load->library('form_validation');
-		$data['mstppa'] = $this->m_master_form->getDataById($id);
+		$data['mstppa'] = $this->m_master_ppa->getDataById($id);
+		// $a['mstppa'] = $this->m_master_ppa->editData($id);;
+		// var_dump($a);
 
 		$this->form_validation->set_rules(
 			'mst_ppa_name',
@@ -87,16 +89,16 @@ class c_master_ppa extends CI_Controller {
 			'required',
 			array('required' => 'Harus Diisi!')
 		);
-		$this->form_validation->set_rules(
-			'mst_form_st',
-			'Master form st',
-			'required',
-			array('required' => 'Harus Diisi!')
-		);
+		// $this->form_validation->set_rules(
+		// 	'mst_form_st',
+		// 	'Master form st',
+		// 	'required',
+		// 	array('required' => 'Harus Diisi!')
+		// );
 
 		// cek validasi
 		if ($this->form_validation->run() == TRUE) {
-			$this->m_master_form->editData($id);
+			$this->m_master_ppa->editData($id);
 			$this->session->set_flashdata('message', '
 			<div class="alert alert-success alert-dismissible" role="alert">
 			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -104,19 +106,19 @@ class c_master_ppa extends CI_Controller {
 			Data berhasil diubah!
 			</div>
 			');
-			redirect(site_url('c_master/index'));
+			redirect(site_url('c_master_ppa/index'));
 		} else {
-			// redirect(site_url('c_master/edit'));
-			$this->load->view('master/edit', [
-                'mstform' => $this->m_master_form->getDataById($id),
+			// redirect(site_url('c_master_ppa/edit'));
+			$this->load->view('master_ppa/edit', [
+                'mstform' => $this->m_master_ppa->getDataById($id),
             ]);
 
 		}
 	}
 
-	public function hapus_data($mst_form_id)
+	public function hapus_data($mst_ppa_id)
 	{
-		$this->m_master_form->hapusData($mst_form_id);
+		$this->m_master_form->hapusData($mst_ppa_id);
 		$this->session->set_flashdata('message', '
         <div class="alert alert-success alert-dismissible" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>

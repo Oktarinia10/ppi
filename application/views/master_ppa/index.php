@@ -34,8 +34,8 @@
                           <td><?= $no++; ?></td>
                          <td><?= $a['mst_ppa_name']; ?></td>
                          <td><?= $a['mst_ppa_st']; ?></td>
-                         <td><a class="dropdown-item" href="<?= site_url("c_master/hapus_data/{$a['mst_ppa_id']}"); ?>">Hapus</a>
-                         <a class="dropdown-item" href="<?= site_url("c_master/edit/{$a['mst_ppa_id']}"); ?>">Edit</a> </td>
+                         <td><a class="dropdown-item" href="<?= site_url("c_master_ppa/hapus_data/{$a['mst_ppa_id']}"); ?>">Hapus</a>
+                         <a class="dropdown-item" href="<?= site_url("c_master_ppa/edit/{$a['mst_ppa_id']}"); ?>">Edit</a> </td>
 
                           </tr>
                         <?php endforeach?>

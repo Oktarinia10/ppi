@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>PPI</title>
+    <title><?= $title ?></title>
     <!-- <link rel="icon" href="favicon.ico"> -->
     <!-- Simple bar CSS -->
     <link rel="stylesheet" href="<?= base_url('assets/'); ?>css/simplebar.css">
@@ -16,24 +16,25 @@
         rel="stylesheet">
     <!-- Icons CSS -->
     <link href="<?= base_url('assets/'); ?>css/feather.css" rel="stylesheet">
-    <link href="<?= base_url('assets/'); ?>css/select2.css" rel="stylesheet">
-    <link href="<?= base_url('assets/'); ?>css/dropzone.css" rel="stylesheet">
-    <link href="<?= base_url('assets/'); ?>css/uppy.min.css" rel="stylesheet">
-    <link href="<?= base_url('assets/'); ?>css/jquery.steps.css" rel="stylesheet">
-    <link href="<?= base_url('assets/'); ?>css/jquery.timepicker.css" rel="stylesheet">
-    <link href="<?= base_url('assets/'); ?>css/quill.snow.css" rel="stylesheet">
-    <link href="<?= base_url('assets/'); ?>css/dataTables.bootstrap4.css" rel="stylesheet">
-    <link href="<?= base_url('assets/'); ?>css/feather.css" rel="stylesheet">
-    <link href="<?= base_url('assets/'); ?>css/feather.css" rel="stylesheet">
+    <link href="<?= base_url('assets/'); ?>css/select2.css">
+    <link href="<?= base_url('assets/'); ?>css/dropzone.css">
+    <link href="<?= base_url('assets/'); ?>css/uppy.min.css">
+    <link href="<?= base_url('assets/'); ?>css/jquery.steps.css">
+    <link href="<?= base_url('assets/'); ?>css/query.timepicker.css">
+    <link href="<?= base_url('assets/'); ?>css/quill.snow.css">
+    <link href="<?= base_url('assets/'); ?>css/dataTables.bootstrap4.css">
+    <link href="<?= base_url('assets/'); ?>css/feather.css">
+    <link href="<?= base_url('assets/'); ?>css/feather.css">
 
     <!-- Date Range Picker CSS -->
     <link rel="stylesheet" href="<?= base_url('assets/'); ?>css/daterangepicker.css">
 
     <!-- App CSS -->
-    <link rel="stylesheet" href="<?php echo base_url('assets/css/app-light.css'); ?>" id="lightTheme">
-    <link rel="stylesheet" href="<?php echo base_url('assets/css/app-dark.css'); ?>" id="darkTheme" disabled>
+    <link rel="stylesheet" href="<?= base_url('assets/') ?>css/app-light.css" id="lightTheme" />
+
+    <link rel="stylesheet" href="<?= base_url('assets/') ?>css/app-dark.css" id="darkTheme" disabled />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="<?= base_url('assets/'); ?>assets/images/favicon.ico">
+    <link rel="shortcut icon" href="<?= base_url('assets/') ?>assets/images/favicon.ico">
     <!-- SweetAlert -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.2/dist/sweetalert2.min.css" />
 </head>
@@ -45,4 +46,3 @@
     
 ?>
     <div class="wrapper">
-      
