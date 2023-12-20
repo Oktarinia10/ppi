@@ -6,7 +6,7 @@
         <div class="container-fluid">
           <div class="row justify-content-center">
             <div class="col-12">
-              <h2 class="mb-2 page-title">Master Form</h2>
+              <h2 class="mb-2 page-title">Master PIC</h2>
               <p class="card-text">DataTables is a plug-in for the jQuery Javascript library. It is a highly flexible tool, built upon the foundations of progressive enhancement, that adds all of these advanced features to any HTML table. </p>
               <?= form_error('image', '<div class="error">', '</div>'); ?>
                         <?= $this->session->flashdata('message'); ?>
@@ -15,29 +15,30 @@
                 <div class="col-md-12">
                   <div class="card shadow">
                     <div class="card-body">
-                    <a href="<?=site_url('c_master/tambah');?>" class="btn btn-primary mb-3">Tambah</a>
+                    <a href="<?=site_url('c_pic/tambah');?>" class="btn btn-primary mb-3">Tambah</a>
                       <!-- table -->
                       <table class="table datatables" id="dataTable-1">
                       <thead class="thead-dark">
                           <tr>
                             <th>No</th>
-                            <th>Mst Name</th>
-                            <th>Mst form st</th>
+                            <th>PIC NIK</th>
+                            <th>PIC Flag</th>
+                            <th>PIC St</th>
                             <th>Action</th>
                           </tr>
                         </thead>
                         <tbody>
                         <?php
                          $no = 1;
-                         foreach ($mstform as $a) : ?>
+                         foreach ($mstpic as $a) : ?>
                           <tr>
                           <td><?= $no++; ?></td>
-                         <td><?= $a['mst_name']; ?></td>
-                         <td><?= $a['mst_form_st']; ?></td>
+                         <td><?= $a['pic_nik']; ?></td>
+                         <td><?= $a['pic_flag']; ?></td>
+                         <td><?= $a['pic_st']; ?></td>
                          <td>
-                         <a class="dropdown-item" href="<?= site_url("c_master/edit/{$a['mst_form_id']}"); ?>">Edit</a> 
-                         <form method="POST" action="<?= site_url("c_master/hapus_data/{$a['mst_form_id']}"); ?>" class="mx-1 my-1">
-                         <form method="POST" action="<?= site_url("c_master/hapus_data/{$a['mst_form_id']}"); ?>" class="mx-1 my-1">
+                         <a class="dropdown-item" href="<?= site_url("c_pic/edit/{$a['pic_id']}"); ?>">Edit</a> 
+                         <form method="POST" action="<?= site_url("c_pic/hapus_data/{$a['pic_id']}"); ?>" class="mx-1 my-1">
                             <input name="_method" type="hidden" value="DELETE">
                             
                             <button type="submit" class="btn btn-sm btn-outline-primary dropdown-item remove-item-btn" data-toggle="tooltip" title="Delete">

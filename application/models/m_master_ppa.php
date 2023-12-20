@@ -22,9 +22,20 @@ class m_master_ppa extends CI_Model {
         $this->db2->insert('master_ppa', $data);
     }
 
+    // public function hapusData($mst_ppa_id){
+    //     $this->db2->where('mst_ppa_id', $mst_ppa_id);
+    //     return $this->db2->delete('master_ppa');
+    // }
+
     public function hapusData($mst_ppa_id){
+        $data['mstppa'] = $this->db2->get_where('master_ppa', ['mst_ppa_id' => $mst_ppa_id])->row_array();
+    
+        // Update data
+        $updated_data = [
+            'mst_ppa_st' => 0,
+        ];
         $this->db2->where('mst_ppa_id', $mst_ppa_id);
-        return $this->db2->delete('master_ppa');
+        $this->db2->update('master_ppa', $updated_data);
     }
 
     public function getDataById($id){

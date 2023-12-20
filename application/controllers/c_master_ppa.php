@@ -118,7 +118,7 @@ class c_master_ppa extends CI_Controller {
 
 	public function hapus_data($mst_ppa_id)
 	{
-		$this->m_master_form->hapusData($mst_ppa_id);
+		$this->m_master_ppa->hapusData($mst_ppa_id);
 		$this->session->set_flashdata('message', '
         <div class="alert alert-success alert-dismissible" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -126,7 +126,7 @@ class c_master_ppa extends CI_Controller {
         Data master form berhasil dihapus!
         </div>
         ');
-		redirect(site_url('c_master/index'));
+		redirect(site_url('c_master_ppa/index'));
 	}
 	
 

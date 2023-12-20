@@ -43,7 +43,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link pl-3" href="<?= site_url('c_master_ppa/index') ?>"><span class="ml-1 item-text">PIC</span>
+                  <a class="nav-link pl-3" href="<?= site_url('c_pic/index') ?>"><span class="ml-1 item-text">PIC</span>
                   </a>
                 </li>
               </ul>

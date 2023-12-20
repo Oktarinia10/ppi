@@ -18,7 +18,7 @@
                     <a href="<?=site_url('c_master_ppa/tambah');?>" class="btn btn-primary mb-3">Tambah</a>
                       <!-- table -->
                       <table class="table datatables" id="dataTable-1">
-                        <thead>
+                      <thead class="thead-dark">
                           <tr>
                             <th>No</th>
                             <th>PPA Name</th>
@@ -34,9 +34,17 @@
                           <td><?= $no++; ?></td>
                          <td><?= $a['mst_ppa_name']; ?></td>
                          <td><?= $a['mst_ppa_st']; ?></td>
-                         <td><a class="dropdown-item" href="<?= site_url("c_master_ppa/hapus_data/{$a['mst_ppa_id']}"); ?>">Hapus</a>
-                         <a class="dropdown-item" href="<?= site_url("c_master_ppa/edit/{$a['mst_ppa_id']}"); ?>">Edit</a> </td>
-
+                         <td>
+                         <a class="dropdown-item" href="<?= site_url("c_master_ppa/edit/{$a['mst_ppa_id']}"); ?>">Edit</a> 
+                         <form method="POST" action="<?= site_url("c_master_ppa/hapus_data/{$a['mst_ppa_id']}"); ?>" class="mx-1 my-1">
+                            <input name="_method" type="hidden" value="DELETE">
+                            
+                            <button type="submit" class="btn btn-sm btn-outline-primary dropdown-item remove-item-btn" data-toggle="tooltip" title="Delete">
+                                <i class="ri-delete-bin-fill align-bottom me-2 text-muted">
+                                <span class="fe fe-trash-2 fe-16 align-middle"></span></i>
+                            </button>
+                        </form>
+                        </td>
                           </tr>
                         <?php endforeach?>
                         </tbody>
