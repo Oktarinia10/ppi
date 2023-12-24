@@ -17,6 +17,7 @@ class m_master_form extends CI_Model {
         return  $this->db2->get('master_form')->result_array();
        
     }
+    
 
     public function addData($data){
         

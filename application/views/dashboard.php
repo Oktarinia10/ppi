@@ -10,7 +10,9 @@
 
 <?php elseif (!empty($this->session->userdata('pic_flag') =='2')) : ?>
     <div class="container-fluid">
-    <div class="p">Halo Admin/rekap(2)</div>
+    <div class="p">Halo Admin/rekap(2) 
+      
+    </div>
     </div>
 <?php endif; ?>
 </main>

@@ -63,7 +63,7 @@ class m_auth extends CI_Model {
         // $this->db->select('kary_nik, kary_pwd');
         // $this->db->from('hrd.karyawan');
         // $this->db->where('kary_nik', $pic_nik);
-        $this->db->select('hrd.karyawan.kary_nik, hrd.karyawan.kary_pwd, ppi.pic.pic_nik, ppi.pic.pic_flag');
+        $this->db->select('hrd.karyawan.kary_nik, hrd.karyawan.kary_pwd, hrd.karyawan.kary_name, ppi.pic.pic_nik, ppi.pic.pic_flag');
         $this->db->from('hrd.karyawan');
         $this->db->join('ppi.pic', 'hrd.karyawan.kary_nik = ppi.pic.pic_nik', 'left');
         $this->db->where(['pic_nik' => $pic_nik]);

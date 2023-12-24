@@ -27,6 +27,7 @@
                                 </div> <!-- /.col -->
                             </div>
                             <button type="submit" class="btn btn-primary">Simpan</button>
+                            <a href="<?=site_url('c_master');?>" class="btn btn-secondary">Kembali</a>
                         </div>
                     </form>
                 </div> <!-- / .card -->

@@ -40,7 +40,7 @@
           </div>
           <div class="form-group">
             <label class="sr-only">Password</label>
-            <input type="text" id="kary_pwd" name="kary_pwd" class="form-control form-control-lg" placeholder="Password" required="">
+            <input type="password" id="kary_pwd" name="kary_pwd" class="form-control form-control-lg" placeholder="Password" required="">
           </div>
           <div class="checkbox mb-3">
             <label>
