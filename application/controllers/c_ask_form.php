@@ -78,10 +78,20 @@ class c_ask_form extends CI_Controller {
 	public function proses_update($id)
 	{
 		$this->load->library('form_validation');
-		$data['mstform'] = $this->m_ask_form->getDataById($id);
+		
+		// $ask_name = $this->input->post('ask_name');
+		// $updated_data = [
+		// 	"ask_name" => $this->input->post('ask_name'),
+		// 	"mst_form_id" => $this->input->post('mst_form_id'),
+		// 	"ask_form_st" => 0, // set 0
+		// ];
+		$cek = $this->m_ask_form->editData($id);
+		var_dump($cek);
+
+
 		// $a['mstppa'] = $this->m_ask_form->editData($id);;
 		// var_dump($a);
-		var_dump($data);
+		// var_dump($data);
 
 		// $this->form_validation->set_rules(
 		// 	'mst_form_id',

@@ -61,7 +61,7 @@
               </a>
               <ul class="collapse list-unstyled pl-4 w-100" id="ui-elements">
                 <li class="nav-item">
-                  <a class="nav-link pl-3" href="<?= site_url('c_ask_form/index') ?>"><span class="ml-1 item-text">Trans HHG</span>
+                  <a class="nav-link pl-3" href="<?= site_url('c_trans_hhg/index') ?>"><span class="ml-1 item-text">Trans HHG</span>
                   </a>
                 </li>
                 <li class="nav-item">

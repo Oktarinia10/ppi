@@ -129,11 +129,11 @@ class Welcome extends CI_Controller {
 	
 		$cek = $this->m_auth->getKaryawanPicData($pic_nik);
 
-	
 		if ($cek) {
 			if (password_verify($kary_pwd, $cek->kary_pwd)) {
 				// redirect 
                 $this->session->set_userdata('pic_flag', $cek->pic_flag);
+                $this->session->set_userdata('kary_name', $cek->kary_name);
 
 				// Redirect based on user role
 				// if ($cek->pic_flag == '1' || $cek->pic_flag == '2') {

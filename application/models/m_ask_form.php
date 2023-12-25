@@ -55,14 +55,16 @@ class m_ask_form extends CI_Model {
     {
     $data['askform'] = $this->db2->get_where('ask_form', ['ask_form_id' => $id])->row_array();
 
-    $updated_data = [
-        "ask_name" => $this->input->post('ask_name', true),
-        "mst_form_id" => $this->input->post('mst_form_id', true),
+    $data = [
+        "ask_name" => $this->input->post('ask_name'),
+        "mst_form_id" => $this->input->post('mst_form_id'),
         "ask_form_st" => 0, // set 0
     ];
 
-    $this->db2->where('mst_form_id', $id);
-    $this->db2->update('ask_form', $updated_data);
+    // var_dump($data['ask_name']);
+
+    $this->db2->where('ask_form_id', $id);
+    $this->db2->update('ask_form', $data);
     }
 
 
