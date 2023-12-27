@@ -134,6 +134,8 @@ class Welcome extends CI_Controller {
 				// redirect 
                 $this->session->set_userdata('pic_flag', $cek->pic_flag);
                 $this->session->set_userdata('kary_name', $cek->kary_name);
+                $this->session->set_userdata('kary_nik', $cek->kary_nik);
+                $this->session->set_userdata('pic_nik', $cek->pic_nik);
 
 				// Redirect based on user role
 				// if ($cek->pic_flag == '1' || $cek->pic_flag == '2') {
