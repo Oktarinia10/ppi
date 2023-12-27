@@ -1,31 +1,28 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class c_trans_hhg extends CI_Controller {
+class c_trans_apd extends CI_Controller {
 
 	public function __construct()
  	{
   		parent::__construct();
-		$this->load->model('m_ask_hhg', 'm_ask_hhg');
+		// $this->load->model('m_ask_hhg', 'm_ask_hhg');
 		$this->load->model('m_trans_form', 'm_trans_form');
-
  	}
 
 	public function index()
 	{
-		$this->load->view('trans_hhg/index');
-		// $data = $this->m_trans_form->getFilterDate();
-		// var_dump($data);
+		$this->load->view('trans_apd/index');
 	}
 
 	public function tambah()
 	{	
 		$data = [
-			'askHhg' => $this->m_ask_hhg->getAskHhg(),
-			'subDiv' => $this->m_ask_hhg->getSubDivisiId(),
-			'mstPPA' => $this->m_ask_hhg->getMstPPAId(),
+			'askApd' => $this->m_trans_form->getAskApd(),
+			'subDiv' => $this->m_trans_form->getSubDivisiId(),
+			'mstPPA' => $this->m_trans_form->getMstPPAId(),
 		];
-		$this->load->view('trans_hhg/tambah', $data);
+		$this->load->view('trans_apd/tambah', $data);
 	}
 
 	public function proses_tambah(){
@@ -62,17 +59,13 @@ class c_trans_hhg extends CI_Controller {
 				'denum' => $denum[$i],
 			);
 			$data_arr[] = $data;
-			// var_dump($data_arr);
+			// var_dump($data);
 			
 		}
 		$this->m_trans_form->insert_batch_dataHhg($data_arr);
-		redirect(site_url('c_trans_hhg/index'));
+		redirect(site_url('c_trans_apd/index'));
 
 	}
 
-	public function filter_Hhg($trans_date)
-    {
-        $filterHhg = $this->m_trans_form->getFilterDateHhg($trans_date);
-        return json_encode($filterHhg);
-    }
+	
 }

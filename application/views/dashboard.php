@@ -7,14 +7,13 @@
     <div class="container-fluid">
     <div class="p">Halo User/pic(1)</div>
     <?= $this->session->userdata('kary_name') ?>
-    <?= $this->session->userdata('kary_nik') ?>
+    <?= $this->session->userdata('pic_nik') ?>
     </div>
 
 <?php elseif (!empty($this->session->userdata('pic_flag') =='2')) : ?>
     <div class="container-fluid">
     <div class="p">Halo Admin/rekap(2) 
     <?= $this->session->userdata('kary_name') ?>
-    <?= $this->session->userdata('kary_nik') ?>
     <?= $this->session->userdata('pic_nik') ?>
     </div>
     </div>

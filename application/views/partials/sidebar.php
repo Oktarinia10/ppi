@@ -65,7 +65,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link pl-3" href="<?= site_url('c_trans_form/create') ?>"><span class="ml-1 item-text">Trans APD</span>
+                  <a class="nav-link pl-3" href="<?= site_url('c_trans_apd/index') ?>"><span class="ml-1 item-text">Trans APD</span>
                   </a>
                 </li>
               </ul>
