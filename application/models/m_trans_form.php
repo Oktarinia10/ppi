@@ -48,4 +48,48 @@ class m_trans_form extends CI_Model {
         return $this->db2->get()->result_array();
 
     }
+
+    public function getValueHhgFarmasi(){
+        $this->db2->select('mst_ppa_id, num, denum');
+        $this->db2->from('trans_form');
+        $this->db2->join('ask_form', 'trans_form.ask_form_id = ask_form.ask_form_id', 'left');
+        $this->db2->where('ask_form.mst_form_id', 1); // hhg
+        $this->db2->where('trans_form.mst_ppa_id', 3); // farmasi
+        $this->db2->group_by('mst_ppa_id, num, denum');
+
+        return $this->db2->get()->result_array();
+
+    }
+    public function getValueHhgPerawat(){ // HHG
+        $this->db2->select('mst_ppa_id, num, denum');
+        $this->db2->from('trans_form');
+        $this->db2->join('ask_form', 'trans_form.ask_form_id = ask_form.ask_form_id', 'left');
+        $this->db2->where('ask_form.mst_form_id', 1); // hhg
+        $this->db2->where('trans_form.mst_ppa_id', 2); // perawat
+        $this->db2->group_by('mst_ppa_id, num, denum');
+
+        return $this->db2->get()->result_array();
+
+    }
+    public function getPertanyaanHhg(){ // HHG
+        $this->db2->distinct();
+        $this->db2->select('ask_form.ask_form_id, ask_name');
+        $this->db2->from('trans_form');
+        $this->db2->join('ask_form', 'trans_form.ask_form_id = ask_form.ask_form_id', 'left');
+        $this->db2->where('ask_form.mst_form_id', 1); // hhg
+        return $this->db2->get()->result_array();
+    }
+
+
+    public function getValueDr(){
+        $this->db2->select('mst_ppa_id');
+        $this->db2->from('trans_form');
+        $this->db2->join('ask_form', 'trans_form.ask_form_id = ask_form.ask_form_id', 'left');
+        $this->db2->where('ask_form.mst_form_id', 2); // apd
+        $this->db2->where('trans_form.mst_ppa_id', 1); // Corrected reference to mst_ppa_id
+        $this->db2->group_by('mst_ppa_id');
+
+        return $this->db2->get()->result_array();
+
+    }
 }

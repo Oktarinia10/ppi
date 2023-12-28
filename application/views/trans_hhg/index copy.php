@@ -21,25 +21,38 @@
         
 
         </thead>
-        <?php foreach ($askHhgValue as $index => $a) : ?>
-    <tr>
-        <td><?= $index + 1; ?></td>
-        <td><?= $a['ask_name']; ?></td>
-        <td>
-            <?php if (isset($valueHhgPrwt[$index])) : ?>
-                <p><?= $valueHhgPrwt[$index]['num']; ?></p>
-                <p><?= $valueHhgPrwt[$index]['denum']; ?></p>
-            <?php endif; ?>
-        </td>
-        <td>
-            <?php if (isset($valueHhgFarm[$index])) : ?>
-                <p><?= $valueHhgFarm[$index]['num']; ?></p>
-                <p><?= $valueHhgFarm[$index]['denum']; ?></p>
-            <?php endif; ?>
-        </td>
-    </tr>
-<?php endforeach; ?>
+        <?php $no = 0; foreach 
+        ($askHhgValue as $a) :?> 
+            
+            <tr>
+                <td><?= $no++; ?></td>
+                <td><?= $a['ask_name']; ?></td>
+                
+            <?php foreach ($valueHhgPrwt as $p => $key) : var_dump($p)?> 
+            <h2><?= $no; ?></h2>
 
+                <?php if ($no == $key[1]) :?>
+                <td>
+                    <p><?= $p['num']; ?></p>
+                    <p><?= $p['denum']; ?></p>
+                </td>
+                <?php endif ; ?>
+            <?php endforeach ?>
+
+            <?php foreach ($valueHhgFarm as $f => $key):?> 
+                <?php if ($no == $key) :?>
+                    <h2>kks</h2>
+
+                <td>
+                    <p><?= $f['num']; ?></p>
+                    <p><?= $f['denum']; ?></p>
+                </td>
+            <?php endif ; ?>
+
+            <?php endforeach ?>
+            
+            </tr>
+          <?php endforeach ?>
         </table>
 
 

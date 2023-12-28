@@ -12,10 +12,15 @@ class c_trans_hhg extends CI_Controller {
  	}
 
 	public function index()
-	{
-		$this->load->view('trans_hhg/index');
-		// $data = $this->m_trans_form->getFilterDate();
-		// var_dump($data);
+	{	
+
+		$data = [
+			'valueHhgPrwt' => $this->m_trans_form->getValueHhgPerawat(),
+			'valueHhgFarm' => $this->m_trans_form->getValueHhgFarmasi(),
+			'askHhgValue' => $this->m_trans_form->getPertanyaanHhg(),
+		];
+		$this->load->view('trans_hhg/index', $data);
+		
 	}
 
 	public function tambah()
