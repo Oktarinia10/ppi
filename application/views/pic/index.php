@@ -7,9 +7,9 @@
           <div class="row justify-content-center">
             <div class="col-12">
               <h2 class="mb-2 page-title">Master PIC</h2>
-              <p class="card-text">DataTables is a plug-in for the jQuery Javascript library. It is a highly flexible tool, built upon the foundations of progressive enhancement, that adds all of these advanced features to any HTML table. </p>
+              <p class="card-text">Data user</p>
               <?= form_error('image', '<div class="error">', '</div>'); ?>
-                        <?= $this->session->flashdata('message'); ?>
+              <?= $this->session->flashdata('message'); ?>
               <div class="row my-4">
                 <!-- Small table -->
                 <div class="col-md-12">
@@ -21,21 +21,25 @@
                       <thead class="thead-dark">
                           <tr>
                             <th>No</th>
-                            <th>PIC NIK</th>
-                            <th>PIC Flag</th>
-                            <th>PIC St</th>
-                            <th>Action</th>
+                            <th>NIK</th>
+                            <th>Flag</th>
+                            <th>Aksi</th>
                           </tr>
                         </thead>
                         <tbody>
                         <?php
                          $no = 1;
                          foreach ($mstpic as $a) : ?>
-                          <tr>
+                          <tr>  
                           <td><?= $no++; ?></td>
                          <td><?= $a['pic_nik']; ?></td>
-                         <td><?= $a['pic_flag']; ?></td>
-                         <td><?= $a['pic_st']; ?></td>
+                         <td>
+                          <?php if ($a['pic_flag'] == '2') :?>
+                            Rekap
+                          <?php else: ?>
+                            PIC
+                          <?php endif; ?>
+                        </td>
                          <td>
                          <a class="dropdown-item" href="<?= site_url("c_pic/edit/{$a['pic_id']}"); ?>">Edit</a> 
                          <form method="POST" action="<?= site_url("c_pic/hapus_data/{$a['pic_id']}"); ?>" class="mx-1 my-1">

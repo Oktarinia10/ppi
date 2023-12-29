@@ -26,11 +26,11 @@
                                             <option>Pilih Flag</option>
                                             <option value="1"
                                                 <?= $mstpic['pic_flag'] == '1' ? 'selected' : ''; ?>>
-                                                1
+                                                PIC
                                             </option>
                                             <option value="2"
                                                 <?= $mstpic['pic_flag'] == '2' ? 'selected' : ''; ?>>
-                                                2
+                                                Rekap
                                             </option>
                                         </select>                                    
                                     </div>

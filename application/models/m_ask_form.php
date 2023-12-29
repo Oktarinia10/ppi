@@ -34,10 +34,10 @@ class m_ask_form extends CI_Model {
     }
 
     public function hapusData($ask_form_id){
-        $data['mstform'] = $this->db2->get_where('ask_form', ['ask_form_id' => $ask_form_id])->row_array();
+        $data['ask_form'] = $this->db2->get_where('ask_form', ['ask_form_id' => $ask_form_id])->row_array();
         // ubah pic_st jadi N
         $updated_data = [
-            'mst_form_st' => 0,
+            'ask_form_st' => 0,
         ];
         $this->db2->where('ask_form_id', $ask_form_id);
         $this->db2->update('ask_form', $updated_data);

@@ -36,7 +36,7 @@
           <h1 class="h6 mb-3">Sign in</h1>
           <div class="form-group">
             <label class="sr-only">Username</label>
-            <input type="text" id="pic_nik" name="pic_nik" class="form-control form-control-lg" placeholder="Username" required="" autofocus="">
+            <input type="text" id="pic_nik" name="pic_nik" class="form-control form-control-lg" placeholder="Username" required>
           </div>
           <div class="form-group">
             <label class="sr-only">Password</label>

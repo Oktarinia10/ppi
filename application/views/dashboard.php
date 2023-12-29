@@ -6,20 +6,16 @@
 <?php if(!empty($this->session->userdata('pic_flag') =='1')) : ?>
     <div class="container-fluid">
     <div class="p">Halo User/pic(1)</div>
-    <?= $this->session->userdata('kary_name') ?>
-    <?= $this->session->userdata('pic_nik') ?>
+    <div><?= $this->session->userdata('kary_name') ?></div>
     </div>
 
 <?php elseif (!empty($this->session->userdata('pic_flag') =='2')) : ?>
     <div class="container-fluid">
-    <div class="p">Halo Admin/rekap(2) 
-    <?= $this->session->userdata('kary_name') ?>
-    <?= $this->session->userdata('pic_nik') ?>
-    </div>
+    <div class="p">Halo Admin/rekap(2)</div>
+    <div><?= $this->session->userdata('kary_name') ?></div>
     </div>
 <?php endif; ?>
 </main>
-
 
 <?php $this->load->view('partials/footer.php'); ?>
 

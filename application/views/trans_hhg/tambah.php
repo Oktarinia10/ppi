@@ -92,9 +92,8 @@
 
                     
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">pic nik</label>
                             <div class="col-sm-5">
-                            <input type="text" class="form-control" name="pic_nik"
+                            <input type="text" class="form-control" name="pic_nik" hidden
                             value="<?= $this->session->userdata('kary_nik') ?>">
                             </div>
                         </div>

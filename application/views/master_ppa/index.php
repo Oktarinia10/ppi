@@ -7,7 +7,7 @@
           <div class="row justify-content-center">
             <div class="col-12">
               <h2 class="mb-2 page-title">Master PPA</h2>
-              <p class="card-text">DataTables is a plug-in for the jQuery Javascript library. It is a highly flexible tool, built upon the foundations of progressive enhancement, that adds all of these advanced features to any HTML table. </p>
+              <p class="card-text"></p>
               <?= form_error('image', '<div class="error">', '</div>'); ?>
                         <?= $this->session->flashdata('message'); ?>
               <div class="row my-4">
@@ -21,9 +21,8 @@
                       <thead class="thead-dark">
                           <tr>
                             <th>No</th>
-                            <th>PPA Name</th>
-                            <th>Mst PPA st</th>
-                            <th>Action</th>
+                            <th>Nama PPA</th>
+                            <th>Aksi</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -33,7 +32,6 @@
                           <tr>
                           <td><?= $no++; ?></td>
                          <td><?= $a['mst_ppa_name']; ?></td>
-                         <td><?= $a['mst_ppa_st']; ?></td>
                          <td>
                          <a class="dropdown-item" href="<?= site_url("c_master_ppa/edit/{$a['mst_ppa_id']}"); ?>">Edit</a> 
                          <form method="POST" action="<?= site_url("c_master_ppa/hapus_data/{$a['mst_ppa_id']}"); ?>" class="mx-1 my-1">

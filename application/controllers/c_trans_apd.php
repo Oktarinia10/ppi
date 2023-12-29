@@ -12,7 +12,11 @@ class c_trans_apd extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('trans_apd/index');
+		$data = [
+			'apdValueByAktors' => $this->m_trans_form->getValueApd(),
+			'askApdValue' => $this->m_trans_form->getPertanyaanApd(),
+		];
+		$this->load->view('trans_apd/index', $data);
 	}
 
 	public function tambah()
